@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'DS-Digital';
+    src: local('DS-Digital'), url(digital.ttf) format('truetype');
+    unicode-range: U+0030—003A;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --svg-fill-color: white;
+    --svg-fill-color-inverse: white;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    font: 16px sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+    overflow: hidden;
+    background: #222;
+}
+button, input[type="text"], input[type="number"], .select-container, select {
+    color: white;
+    background: #444;
+    border: none;
+    font-size: 14px;
+    padding: 6px 8px;
+    cursor: pointer;
+    outline: 0;
+}
+.select-container {
+    padding: 0;
+    display: inline-block;
+}
+select {
+    border: none;
+    background: none;
+    color: white;
+    height: 30px;
+}
+option {
+    color: #333;
+}
+input[type="text"], input[type="number"] {
+    cursor: text;
+}
+input[type="checkbox"] {
+    -webkit-filter: saturate(0);
+    filter: saturate(0);
+}
+table {
+    border-collapse: collapse;
+}
+td {
+    padding: 3px;
+}
+
+/* Major interface panes, aside, article, header, etc. */
+
+body>* {
+    padding: 10px;
+    position: fixed;
+    overflow: scroll;
+    background: #222;
+}
+#timer {
+    font-family: 'DS-Digital', monospace;
+    display: block;
+    height: 20vh;
+    width: 25vw;
+    top: 0;
+    left: 35vw;
+    font-size: 20vh;
+    line-height: .8;
+}
+.high {
+    color: #42C752;
+}
+.med {
+    color: #FFEB3B;
+}
+.low {
+    color: #D32F2F;
+}
+.blink {
+    color: #D32F2F;
+    animation: 0.75s linear infinite blinker;
+}
+.auto {
+    color: #0E68FA;
+}
+.auto::after {
+    content: 'AUTO';
+    font-family: 'Courier';
+    font-size: 25pt;
+    position: absolute;
+    vertical-align: top;
+    padding: 5px 15px 15px;
+}
+@keyframes blinker {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+header {
+    width: 20vw;
+    height: 25vh;
+    top: 0;
+    left: 60vw;
+    color: white;
+}
+#camera {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 35vw;
+    width: 50vw;
+    height: 80vh;
+    overflow: hidden;
+    background: url(../images/static.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#vufine-camera {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #333;
+    background-image: url('http://10.14.18.2:1181/?action=stream');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#camera-buttons > rect {
+    transition: fill .2s;
+}
+#camera-buttons > rect:hover {
+    fill: var(--svg-fill-color-inverse);
+
+}
+#tuning {
+    width: 50vw;
+    height: 80vh;
+    bottom: 0;
+    left: 35vw;
+}
+#tuning div {
+    margin: 20px 0;
+}
+#tuning p {
+    margin-bottom: 10px;
+}
+#auto-warning {
+    display: none;
+    color: red;
+}
+#auto {
+    width: 35vw;
+    height: 100vh;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+#field, #field svg {
+    width: calc(54 * 8px);
+    height: calc(27 * 8px);
+}
+#field svg {
+    margin-bottom: calc(-27 * 8px);
+}
+#field svg rect {
+    color: red;
+}
+/* TODO: Other field styles here */
+
+article {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 35vw;
+}
+svg * {
+    stroke: white;
+    fill: #222;
+    stroke-width: 2;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+}
+.svgsolid {
+    fill: var(--svg-fill-color);
+}
+text {
+    letter-spacing: 2px;
+    stroke: none;
+    fill: white;
+}
+#gyro {
+}
+#gyro-robot {
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+}
+#gyro-number {
+    font-size: 25px;
+    text-anchor: middle;
+}
+#robot-diagram {
+    position: absolute;
+    bottom: 1px;
+    left: 1vw;
+}
+#robot-arm {
+    transform-origin: left 10%;
+    animation: spin-arm 2s infinite alternate-reverse;
+}
+@keyframes spin-arm {
+    from { transform: rotate(30deg); }
+    to   { transform: rotate(40deg);  }
+}
+#robot-arm-extension {
+    transition: 0.3s;
+}
+#robot-crosspiece {
+
+}
+.gear {
+    stroke-dasharray: 3 3;
+}
+.cube {
+    fill: #a9c421;
+}
+#team {
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+#auto-modes {
+    width: 300px;
+    height: 300px;
+}
+#auto-modes svg {
+    position: relative;
+    bottom: 20px;
+    right: 100px;
+}
+#auto-options {
+    position: relative;
+    left: 50px;
+}
+#field-position input, #auto-modes select, #auto-modes input {
+    margin: 5px;
+    margin-top: 10px;
+}
+#fetch, #cube {
+    position: relative;
+    display: block;
+}
+.cube {
+    display: block;
+    margin-top: 10px;
+}
+aside {
+    right: 0;
+    top: 0;
+    padding-left: 20px;
+    width: 15vw;
+    height: 100vh;
+}
+aside>* {
+    margin-bottom: 20px;
+}
+#tank-gauge-container {
+    height: 20px;
+    width: 120px;
+    background: #444;
+    overflow: hidden;
+}
+#tank-gauge {
+    height: 20px;
+    background: #555;
+}
+#replay-auto {
+    position: relative;
+    margin-top: 5px;
+    display: none;
+}
+#replay-auto label {
+    margin-right: 5px;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "1418Dashboard",
+  "version": "v0.1.0",
+  "description": "2018 driving dashboard ",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frc1418/2018-dashboard"
+  },
+  "author": "Erik Boesen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frc1418/2018-dashboard"
+  },
+  "homepage": "http://1418.team",
+  "devDependencies": {
+    "electron": "^1.2.0"
+  }
+}
