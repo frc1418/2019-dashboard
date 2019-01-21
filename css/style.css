@@ -117,8 +117,8 @@ header {
     padding: 0;
     position: fixed;
     bottom: 0;
-    left: 35vw;
-    width: 50vw;
+    left: 22vw;
+    width: 63vw;
     height: 80vh;
     overflow: hidden;
     background: url(../images/static.gif);
@@ -184,7 +184,7 @@ article {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 35vw;
+    width: 22vw;
 }
 svg * {
     stroke: white;
@@ -223,7 +223,7 @@ text {
     animation: spin-arm 2s infinite alternate-reverse;
 }
 @keyframes spin-arm {
-    from { transform: rotate(30deg); }
+    from { transform: rotate(32.5deg); }
     to   { transform: rotate(40deg);  }
 }
 #robot-arm-extension {
