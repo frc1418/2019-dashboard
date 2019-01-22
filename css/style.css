@@ -218,25 +218,18 @@ text {
     bottom: 1px;
     left: 1vw;
 }
-#robot-arm {
-    transform-origin: left 10%;
-    animation: spin-arm 2s infinite alternate-reverse;
+#robot-tower {
+  animation: move-arm 2s infinite alternate-reverse;
 }
-@keyframes spin-arm {
-    from { transform: rotate(32.5deg); }
-    to   { transform: rotate(40deg);  }
-}
-#robot-arm-extension {
-    transition: 0.3s;
+@keyframes move-arm {
+    from { transform: translateY(165px); }
+    to   { transform: translateY(0px);  }
 }
 #robot-crosspiece {
 
 }
-.gear {
-    stroke-dasharray: 3 3;
-}
-.cube {
-    fill: #a9c421;
+.ball {
+    fill: #FF8300;
 }
 #team {
     font-size: 28px;
@@ -259,11 +252,11 @@ text {
     margin: 5px;
     margin-top: 10px;
 }
-#fetch, #cube {
+#fetch, #ball {
     position: relative;
     display: block;
 }
-.cube {
+.ball {
     display: block;
     margin-top: 10px;
 }

@@ -88,45 +88,32 @@
         </svg>
         <svg id="robot-diagram" width="332" height="450">
             <!-- Back -->
-            <rect x=15 y=100 width=15 height=280 />
+            <rect x=195 y=180 width=15 height=200 />
 
-            <circle cx=30 cy=100 r=35 stroke="dotted" class="gear" />
-            <circle cx=30 cy=100 r=33 stroke="dotted" />
+                <g id="robot-tower">
 
+                    <!-- Ball -->
+                    <circle class="ball" cx="250" cy="185" r="25" />
 
-            <g id="robot-arm">
-                <rect x=20 y=90 width=250 height=15 />
-
-                <g id="robot-arm-extension">
-                    <!-- Piston arm -->
-                    <rect x=110 y=79 height=5 width=100 />
-
-                    <rect x=210 y=75 width=80 height=15 />
-
-                    <!-- Cube -->
-                    <rect class="cube" x=290 y=100 width=80 height=80 />
-
-                    <rect x=260 y=89 width=60 height=18 />
-                    <rect x=280 y=90 width=40 height=60 />
+                    <!-- Ball Holder-->
+                    <rect x="195" y="180" width="60" height="18" />
+                    <rect x="245" y="190" width="10" height="18" />
                 </g>
 
-                <!-- Piston -->
-                <rect x=30 y=75 width=150 height=15 rx=5 />
-            </g>
-
-            <text x=40 y=290 font-size=8>{vektre}</text>
-            <text x=45 y=310 font-size=8>TFO1418</text>
-            <text x=40 y=330 font-size=8>< TMG ></text>
-            <text x=45 y=350 font-size=8>GMHS</text>
+            <!-- Sponsors -->
+            <rect x=90 y=280 width=75 height=100 />
+            <text x=105 y=300 font-size=8>{vektre}</text>
+            <text x=105 y=320 font-size=8>TFO1418</text>
+            <text x=105 y=340 font-size=8>< TMG ></text>
+            <text x=110 y=360 font-size=8>GMHS</text>
 
             <!-- Tires -->
-            <circle cx=50 cy=410 r=25 />
-            <circle cx=135 cy=415 r=25 />
-            <circle cx=220 cy=410 r=25 />
+            <circle cx=60 cy=410 r=25 />
+            <circle cx=185 cy=410 r=25 />
 
             <!-- Bumper -->
-            <rect x=10 y=380 width=250 height=30 rx=5 />
-            <text x=135 y=405 id="team" font-size=16 text-anchor="middle">1418</text>
+            <rect x=10 y=380 width=220 height=30 rx=5 />
+            <text x=120 y=405 id="team" font-size=16 text-anchor="middle">1418</text>
         </svg>
     </article>
     <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
