@@ -56,6 +56,9 @@
                     <rect width="50" height="50" x="300" y="100"/>
                     <rect width="50" height="80" x="215" y="25"/>
                     <rect width="20" height="60" x="230" y="25"/>
+                    <text x="135" y="140" font-size=12>R1</text>
+                    <text x="315" y="140" font-size=12>R2</text>
+                    <text x="230" y="100" font-size=12>CS</text>
                 </svg>
             </div>
 
@@ -66,8 +69,17 @@
                     <label>Right<input type="radio" id="right" name="position" value="right"></label>
                 </div>
                 <div id="starting-level">
-                    <label>Level 1<input type="radio" id="one" value="one"></label>
-                    <label>Level 2<input type="radio" id="two" value="two"></label>
+                    <label>Level 1<input type="radio" id="one" name="level" value="one"></label>
+                    <label>Level 2<input type="radio" id="two" name="level" value="two"></label>
+                </div>
+                <div id="item-placed">
+                    <label>Hatch<input type="radio" id="hatch" name="item" value="hatch"></label>
+                    <label>Cargo<input type="radio" id="cargo" name="item" value="cargo"></label>
+                </div>
+                <div id="location">
+                    <label>R1<input type="radio" id="rocket1" name="location" value="rocket1"></label>
+                    <label>R2<input type="radio" id="rocket2" name="location" value="rocket2"></label>
+                    <label>CS<input type="radio" id="cargo-ship" name="location" value="cargo-ship"></label>
                 </div>
             </div>
         </div>
