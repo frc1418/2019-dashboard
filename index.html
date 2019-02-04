@@ -69,8 +69,8 @@
                     <label>Right<input type="radio" id="right" name="position" value="right"></label>
                 </div>
                 <div id="starting-level">
-                    <label>Level 1<input type="radio" id="one" name="level" value="one"></label>
-                    <label>Level 2<input type="radio" id="two" name="level" value="two"></label>
+                    <label>Level 1<input type="radio" id="one" name="level1" value="one"></label>
+                    <label>Level 2<input type="radio" id="two" name="level2" value="two"></label>
                 </div>
                 <div id="item-placed">
                     <label>Hatch<input type="radio" id="hatch" name="item" value="hatch"></label>
@@ -141,25 +141,6 @@
             </div>
         </div>
         <div id="auto-warning">WARNING: Autonomous not configured!</div>
-        <div id="auto-diagram">
-            <svg id="auto-table" width=165 height=185>
-                <!-- Far switch -->
-                <g id="auto-table-far-switch">
-                    <rect width=50 height=50 x=30 y=10 />
-                    <rect width=50 height=50 x=90 y=10 />
-                </g>
-                <!-- Scale -->
-                <g id="auto-table-scale">
-                    <rect width=50 height=50 x=10 y=70 />
-                    <rect width=50 height=50 x=110 y=70 />
-                </g>
-                <!-- Near switch -->
-                <g id="auto-table-near-switch">
-                    <rect width=50 height=50 x=30 y=130 />
-                    <rect width=50 height=50 x=90 y=130 />
-                </g>
-            </svg>
-        </div>
         <div>
             <p>Recording Name</p>
             <input type="text" placeholder="Save target" id="recording-target">
