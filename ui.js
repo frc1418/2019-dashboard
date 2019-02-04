@@ -15,7 +15,6 @@ var ui = {
 	robotDiagram: {
 		body: document.getElementById('robot-diagram'),
 		arm: document.getElementById('robot-arm'),
-		armExtension: document.getElementById('robot-arm-extension')
 	},
 	tuning: {
 		list: document.getElementById('tuning'),
@@ -32,16 +31,24 @@ var ui = {
 		num: 0,
 		dump: document.getElementById('dump'),
 		fetch: document.getElementById('fetch'),
-		cube: document.getElementById('cube'),
-		position: {
+		ball: document.getElementById('ball'),
+		field-position: {
 			right: document.getElementById('right'),
 			left: document.getElementById('left'),
 			middle: document.getElementById('middle')
 		},
-		plates: {
-			far: document.getElementById('auto-table-far-switch'),
-			scale: document.getElementById('auto-table-scale'),
-			near: document.getElementById('auto-table-near-switch')
+		starting-level: {
+			level1: document.getElementById('one'),
+			level2: document.getElementById('two'),
+		},
+		item-placed: {
+			hatch: document.getElementById('hatch'),
+			cargo: document.getElementById('cargo'),
+		},
+		location: {
+			R1: document.getElementById('rocket1'),
+			R2: document.getElementById('rocket2'),
+			CS: document.getElementById('cargo-ship'),
 		},
 		// TODO: Warning unimplemented
 		warning: document.getElementById('auto-warning'),
@@ -161,20 +168,6 @@ function onValueChanged(key, value, isNew) {
 				ui.tankPressure.gauge.style.background = 'green';
 			}
 			ui.tankPressure.readout.innerHTML = Math.round(value) + 'psi';
-			break;
-		case '/robot/plates':
-			var table = document.getElementById('auto-table');
-			var color = NetworkTables.getValue('/FMSInfo/isRedAlliance') ? 'red' : 'blue';
-
-			ui.auto.plates.far.children[0].style.fill = value[2] == 'L' ? color : '';
-			ui.auto.plates.far.children[1].style.fill = value[2] == 'L' ? '' : color;
-
-			ui.auto.plates.scale.children[0].style.fill = value[1] == 'L' ? color : '';
-			ui.auto.plates.scale.children[1].style.fill = value[1] == 'L' ? '' : color;
-
-			ui.auto.plates.near.children[0].style.fill = value[0] == 'L' ? color : '';
-			ui.auto.plates.near.children[1].style.fill = value[0] == 'L' ? '' : color;
-
 			break;
 		case '/SmartDashboard/camera_id':
 			ui.camera.id = value;
@@ -305,8 +298,8 @@ ui.auto.fetch.onchange = function() {
 	NetworkTables.putValue('/autonomous/modular/fetch', this.value);
 };
 
-ui.auto.cube.onchange = function() {
-	NetworkTables.putValue('/autonomous/modular/cube', this.value);
+ui.auto.ball.onchange = function() {
+	NetworkTables.putValue('/autonomous/modular/ball', this.value);
 };
 
 ui.auto.position.left.onclick = function() {
