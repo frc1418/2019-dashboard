@@ -32,24 +32,6 @@ var ui = {
 		dump: document.getElementById('dump'),
 		fetch: document.getElementById('fetch'),
 		ball: document.getElementById('ball'),
-		field-position: {
-			right: document.getElementById('right'),
-			left: document.getElementById('left'),
-			middle: document.getElementById('middle')
-		},
-		starting-level: {
-			level1: document.getElementById('one'),
-			level2: document.getElementById('two'),
-		},
-		item-placed: {
-			hatch: document.getElementById('hatch'),
-			cargo: document.getElementById('cargo'),
-		},
-		location: {
-			R1: document.getElementById('rocket1'),
-			R2: document.getElementById('rocket2'),
-			CS: document.getElementById('cargo-ship'),
-		},
 		// TODO: Warning unimplemented
 		warning: document.getElementById('auto-warning'),
 		warn: function() {
