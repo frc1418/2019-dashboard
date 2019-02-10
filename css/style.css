@@ -113,17 +113,23 @@ header {
     left: 60vw;
     color: white;
 }
-#camera {
+.camera {
     padding: 0;
     position: fixed;
     bottom: 0;
     left: 22vw;
-    width: 63vw;
+    width: 32vw;
     height: 80vh;
     overflow: hidden;
     background: url(../images/static.gif);
     background-size: cover;
     background-repeat: no-repeat;
+}
+#camera1 {
+    left: 22vw;
+}
+#camera2 {
+    left: 55vw;
 }
 #vufine-camera {
     padding: 0;

@@ -47,14 +47,6 @@ var ui = {
 		gauge: document.getElementById('tank-gauge'),
 		readout: document.getElementById('tank-readout')
 	},
-    camera: {
-		viewer: document.getElementById('camera'),
-		id: 0,
-		srcs: [ // Will default to first camera
-            'http://10.14.18.2:1181/stream.mjpg',
-            'http://10.14.18.2:1182/stream.mjpg'
-        ]
-    },
 
     theme: {
         select: document.getElementById('theme-select'),
@@ -150,11 +142,6 @@ function onValueChanged(key, value, isNew) {
 				ui.tankPressure.gauge.style.background = 'green';
 			}
 			ui.tankPressure.readout.innerHTML = Math.round(value) + 'psi';
-			break;
-		case '/SmartDashboard/camera_id':
-			ui.camera.id = value;
-			ui.camera.viewer.style.backgroundImage = 'url(' + ui.camera.srcs[ui.camera.id] + ')';
-			console.log('Camera stream source switched to ' + ui.camera.viewer.style.backgroundImage);
 			break;
 	}
 
@@ -261,38 +248,32 @@ ui.auto.select.onchange = function() {
 	ui.replay.wrapper.style.display = this.value === 'Replay' ? 'block' : 'none';
 };
 
-ui.camera.viewer.onclick = function() {
-    ui.camera.id++;
-	if (ui.camera.id === ui.camera.srcs.length) ui.camera.id = 0;
-	NetworkTables.putValue('/SmartDashboard/camera_id', ui.camera.id);
-};
-
 ui.theme.select.onchange = function() {
     NetworkTables.putValue('/SmartDashboard/theme', this.value);
 };
 
-ui.auto.dump.onclick = function() {
-	NetworkTables.putValue('/autonomous/modular/dump', ui.auto.num === 0);
-	ui.auto.num += (ui.auto.num === 0);
-};
+// ui.auto.dump.onclick = function() {
+// 	NetworkTables.putValue('/autonomous/modular/dump', ui.auto.num === 0);
+// 	ui.auto.num += (ui.auto.num === 0);
+// };
 
-ui.auto.fetch.onchange = function() {
-	NetworkTables.putValue('/autonomous/modular/fetch', this.value);
-};
+// ui.auto.fetch.onchange = function() {
+// 	NetworkTables.putValue('/autonomous/modular/fetch', this.value);
+// };
 
-ui.auto.ball.onchange = function() {
-	NetworkTables.putValue('/autonomous/modular/ball', this.value);
-};
+// ui.auto.ball.onchange = function() {
+// 	NetworkTables.putValue('/autonomous/modular/ball', this.value);
+// };
 
-ui.auto.position.left.onclick = function() {
-	NetworkTables.putValue('/autonomous/position', this.value);
-};
-ui.auto.position.right.onclick = function() {
-	NetworkTables.putValue('/autonomous/position', this.value);
-};
-ui.auto.position.middle.onclick = function() {
-	NetworkTables.putValue('/autonomous/position', this.value);
-};
+// ui.auto.position.left.onclick = function() {
+// 	NetworkTables.putValue('/autonomous/position', this.value);
+// };
+// ui.auto.position.right.onclick = function() {
+// 	NetworkTables.putValue('/autonomous/position', this.value);
+// };
+// ui.auto.position.middle.onclick = function() {
+// 	NetworkTables.putValue('/autonomous/position', this.value);
+// };
 
 ui.replay.name.onchange = function() {
 	NetworkTables.putValue('/autonomous/Replay/source', this.value);
