@@ -7,8 +7,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    --svg-fill-color: white;
-    --svg-fill-color-inverse: white;
 }
 ::-webkit-scrollbar {
     display: none;
@@ -118,7 +116,7 @@ header {
     position: fixed;
     bottom: 0;
     left: 22vw;
-    width: 32vw;
+    width: 30vw;
     height: 80vh;
     overflow: hidden;
     background: url(../images/static.gif);
@@ -129,7 +127,7 @@ header {
     left: 22vw;
 }
 #camera2 {
-    left: 55vw;
+    left: 52vw;
 }
 #vufine-camera {
     padding: 0;
@@ -183,6 +181,29 @@ header {
 }
 #field svg rect {
     color: red;
+}
+.crosshair1 {
+    position: absolute;
+    padding: 0;
+    top: 57%;
+    left: 35.5%;
+    height: 40px;
+    width: 40px;
+    background: none;
+}
+.crosshair2 {
+    position: absolute;
+    padding: 0;
+    top: 57%;
+    left: 65.5%;
+    height: 40px;
+    width: 40px;
+    background: none;
+}
+#crosshair * {
+    stroke: red;
+    fill: none;
+    stroke-width: 3px;
 }
 /* TODO: Other field styles here */
 

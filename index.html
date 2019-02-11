@@ -32,6 +32,20 @@
         More explanation in that CSS rule. -->
     <img class="camera" id="camera1" src="http://roborio-1418-frc.local:1181/stream.mjpg">
     <img class="camera" id="camera2" src="http://roborio-1418-frc.local:1182/stream.mjpg">
+    <div class="crosshair1">
+        <svg id="crosshair" width="40" height="40">
+            <circle cx="20" cy="20" r="18" />
+            <line x1="2" y1="20" x2="38" y2="20" stroke="red" />
+            <line x1="20" y1="2" x2="20" y2="38" stroke="red" />
+        </svg>
+    </div>
+    <div class="crosshair2">
+        <svg id="crosshair" width="40" height="40">
+            <circle cx="20" cy="20" r="18" />
+            <line x1="2" y1="20" x2="38" y2="20" stroke="red" />
+            <line x1="20" y1="2" x2="20" y2="38" stroke="red" />
+        </svg>
+    </div>
     <div id="tuning" style="display: none;">
         <input type="text" placeholder="Property" id="name">
         <input type="text" placeholder="Value" id="value">
