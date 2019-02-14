@@ -15,6 +15,10 @@ var ui = {
 	robotDiagram: {
 		body: document.getElementById('robot-diagram'),
 		arm: document.getElementById('robot-arm'),
+		tower: document.getElementById('robot-tower'),
+		towerPositionPrevious: true,
+		towerHeightUpdated: false,
+		towerHeightTarget: 0
 	},
 	tuning: {
 		list: document.getElementById('tuning'),
@@ -29,11 +33,13 @@ var ui = {
 		panel: document.getElementById('auto'),
 		select: document.getElementById('auto-select'),
 		num: 0,
-		dump: document.getElementById('dump'),
-		fetch: document.getElementById('fetch'),
-		ball: document.getElementById('ball'),
 		// TODO: Warning unimplemented
 		warning: document.getElementById('auto-warning'),
+		position: {
+			left: document.getElementById('left'),
+			right: document.getElementById('right'),
+			middle: document.getElementById('middle')
+		},
 		warn: function() {
 			// TODO: Check any additional auto configurations that should be present
 			if (NetworkTables.getValue('SmartDashboard/Autonomous Mode/selected') == '' || !ui.auto.field.getPosition())
@@ -86,6 +92,7 @@ function onValueChanged(key, value, isNew) {
 			switch (value) {
 				case 'disabled':
 					ui.timer.innerHTML = 'DISBL';
+					ui.robotDiagram.tower.style.animation = 'move-arm 2s infinite alternate-reverse';
 					break;
 			}
 			break;
@@ -142,6 +149,26 @@ function onValueChanged(key, value, isNew) {
 				ui.tankPressure.gauge.style.background = 'green';
 			}
 			ui.tankPressure.readout.innerHTML = Math.round(value) + 'psi';
+			break;
+		case '/components/lift/lift_forward':
+			if (value === (ui.robotDiagram.towerPositionPrevious ? 195 : 125)) {
+				break;
+			}
+			ui.robotDiagram.towerPositionPrevious = value;
+			ui.robotDiagram.body.firstElementChild.setAttribute('x', value ? 195 : 125);
+			var tower = ui.robotDiagram.tower;
+			ui.robotDiagram.towerUpdated = true;
+
+			for (child of tower.children) {
+				var attribute = 'x';
+				var updated = parseInt(child.getAttribute('x'));
+				if (isNaN(updated)) {
+					updated = parseInt(child.getAttribute('cx'));
+					attribute = 'cx';
+				}
+				updated = updated + (value ? 70 : -70);
+				child.setAttribute(attribute, updated)
+			}
 			break;
 	}
 
@@ -252,28 +279,15 @@ ui.theme.select.onchange = function() {
     NetworkTables.putValue('/SmartDashboard/theme', this.value);
 };
 
-// ui.auto.dump.onclick = function() {
-// 	NetworkTables.putValue('/autonomous/modular/dump', ui.auto.num === 0);
-// 	ui.auto.num += (ui.auto.num === 0);
-// };
-
-// ui.auto.fetch.onchange = function() {
-// 	NetworkTables.putValue('/autonomous/modular/fetch', this.value);
-// };
-
-// ui.auto.ball.onchange = function() {
-// 	NetworkTables.putValue('/autonomous/modular/ball', this.value);
-// };
-
-// ui.auto.position.left.onclick = function() {
-// 	NetworkTables.putValue('/autonomous/position', this.value);
-// };
-// ui.auto.position.right.onclick = function() {
-// 	NetworkTables.putValue('/autonomous/position', this.value);
-// };
-// ui.auto.position.middle.onclick = function() {
-// 	NetworkTables.putValue('/autonomous/position', this.value);
-// };
+ui.auto.position.left.onclick = function() {
+	NetworkTables.putValue('/autonomous/position', this.value);
+};
+ui.auto.position.right.onclick = function() {
+	NetworkTables.putValue('/autonomous/position', this.value);
+};
+ui.auto.position.middle.onclick = function() {
+	NetworkTables.putValue('/autonomous/position', this.value);
+};
 
 ui.replay.name.onchange = function() {
 	NetworkTables.putValue('/autonomous/Replay/source', this.value);
