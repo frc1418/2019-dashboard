@@ -118,15 +118,16 @@ header {
     left: 22vw;
     width: 30vw;
     height: 80vh;
+    background-size: contain;
     overflow: hidden;
-    background: url(../images/static.gif);
-    background-size: cover;
     background-repeat: no-repeat;
 }
 #camera1 {
+    background-image: url("http://roborio-1418-frc.local:1181/stream.mjpg"), url(../images/static.gif);
     left: 22vw;
 }
 #camera2 {
+    background-image: url("http://roborio-1418-frc.local:1182/stream.mjpg"), url(../images/static.gif);
     left: 52vw;
 }
 #vufine-camera {
@@ -182,7 +183,11 @@ header {
 #field svg rect {
     color: red;
 }
-.crosshair1 {
+.camera {
+    display: flex;
+    justify-content: center;
+}
+/*.crosshair1 {
     position: absolute;
     padding: 0;
     top: 57%;
@@ -199,7 +204,7 @@ header {
     height: 40px;
     width: 40px;
     background: none;
-}
+}*/
 #crosshair * {
     stroke: red;
     fill: none;
