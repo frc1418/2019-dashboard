@@ -187,24 +187,6 @@ header {
     display: flex;
     justify-content: center;
 }
-/*.crosshair1 {
-    position: absolute;
-    padding: 0;
-    top: 57%;
-    left: 35.5%;
-    height: 40px;
-    width: 40px;
-    background: none;
-}
-.crosshair2 {
-    position: absolute;
-    padding: 0;
-    top: 57%;
-    left: 65.5%;
-    height: 40px;
-    width: 40px;
-    background: none;
-}*/
 #crosshair * {
     stroke: red;
     fill: none;
