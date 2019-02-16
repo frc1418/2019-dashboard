@@ -99,24 +99,27 @@
                     <label>CS<input type="radio" id="cargo-ship" name="location" value="cargo-ship"></label>
                 </div>
             </div>
+            <div id="auto-warning">WARNING: Autonomous not configured!</div>
+            <div>
+                <p>Recording Name</p>
+                <input type="text" placeholder="Save target" id="recording-target">
+            </div>
         </div>
     </div>
     <!-- The main body of the dashboard -->
     <article>
         <!-- Gyroscope -->
         <svg id="gyro" width="400" height="400">
-            <circle cx="140" cy="140" r="120" />
-            <circle cx="140" cy="140" r="80" />
+            <circle cx="70" cy="70" r="60" />
+            <circle cx="70" cy="70" r="40" />
             <g id="gyro-arm">
-                <rect x="67.5" y="60" width="145" height="160" />
-                <rect x="75" y="70" width="12" height="32" id="fl_module" />
-                <rect x="195" y="70" width="12" height="32" id="fr_module" />
-                <rect x="75" y="180" width="12" height="32" id="rl_module" />
-                <rect x="195" y="180" width="12" height="32" id="rr_module" />
+                <rect x="34" y="30" width="73" height="80" />
+                <rect x="37" y="35" width="6" height="6" id="fl_module" />
+                <rect x="98" y="35" width="6" height="6" id="fr_module" />
+                <rect x="37" y="90" width="6" height="6" id="rl_module" />
+                <rect x="98" y="90" width="6" height="6" id="rr_module" />
             </g>
-            <circle id="field-centric" cx="140" cy="110" r="16" />
-            <text id="fc-label" x="132" y="115" font-size=12>FC</text>
-            <text id="gyro-number" x="145" y="200" font-size=12>0º</text>
+            <text id="gyro-number" x="73" y="100" font-size=12>0º</text>
         </svg>
         <svg id="robot-diagram" width="332" height="450">
             <!-- Back -->
@@ -147,22 +150,19 @@
             <rect x=10 y=380 width=220 height=30 rx=5 />
             <text x=120 y=405 id="team" font-size=16 text-anchor="middle">1418</text>
         </svg>
+        <svg id="hatch-manipulation-diagram" width"600" height="300">
+            <!-- Hatch Manipulator -->
+            <g id="hatch-piston-left">
+                <rect x=60 y=100 width=60 height=10 />
+                <rect x=110 y=92.5 height=25 width=10 />
+            </g>
+            <g id="hatch-piston-right">
+                <rect x=130 y=100 width=60 height=10 />
+                <rect x=130 y=92.5 height=25 width=10 />
+            </g>
+            <text x=125 y=145 id="hatch-manipulator-state" font-size=20 text-anchor="middle">CLOSED</text>
+        </svg>
     </article>
-    <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
-    <aside>
-        <div id="tank-pressure">
-            <div id="tank-label">TANK @</div>
-            <div id="tank-readout">??psi</div>
-            <div id="tank-gauge-container">
-                <div id="tank-gauge"></div>
-            </div>
-        </div>
-        <div id="auto-warning">WARNING: Autonomous not configured!</div>
-        <div>
-            <p>Recording Name</p>
-            <input type="text" placeholder="Save target" id="recording-target">
-        </div>
-    </aside>
     <script src="/networktables/networktables.js"></script>
     <script src="ui.js"></script>
 </body>

@@ -124,11 +124,11 @@ header {
 }
 #camera1 {
     background-image: url("http://10.14.18.2:1181/stream.mjpg"), url(../images/static.gif);
-    left: 22vw;
+    left: 52vw;
 }
 #camera2 {
     background-image: url("http://10.14.18.2:1182/stream.mjpg"), url(../images/static.gif);
-    left: 52vw;
+    left: 67vw;
 }
 #vufine-camera {
     padding: 0;
@@ -151,7 +151,7 @@ header {
 
 }
 #tuning {
-    width: 63vw;
+    width: 77vw;
     height: 80vh;
     bottom: 0;
     left: 22vw;
@@ -229,7 +229,7 @@ text {
 }
 #robot-diagram {
     position: absolute;
-    bottom: 1px;
+    bottom: 30vh;
     left: 1vw;
 }
 #robot-tower {
@@ -283,16 +283,6 @@ aside {
 }
 aside>* {
     margin-bottom: 20px;
-}
-#tank-gauge-container {
-    height: 20px;
-    width: 120px;
-    background: #444;
-    overflow: hidden;
-}
-#tank-gauge {
-    height: 20px;
-    background: #555;
 }
 #replay-auto {
     position: relative;
