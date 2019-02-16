@@ -124,11 +124,11 @@ header {
 }
 #camera1 {
     background-image: url("http://10.14.18.2:1181/stream.mjpg"), url(../images/static.gif);
-    left: 52vw;
+    left: 30vw;
 }
 #camera2 {
     background-image: url("http://10.14.18.2:1182/stream.mjpg"), url(../images/static.gif);
-    left: 67vw;
+    left: 60vw;
 }
 #vufine-camera {
     padding: 0;
@@ -231,6 +231,10 @@ text {
     position: absolute;
     bottom: 30vh;
     left: 1vw;
+}
+#hatch-manipulation-diagram {
+    position: absolute;
+    bottom: 1vh;
 }
 #robot-tower {
   animation: move-arm 2s infinite alternate-reverse;
