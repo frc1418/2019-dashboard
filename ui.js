@@ -20,6 +20,12 @@ var ui = {
 		towerHeightUpdated: false,
 		towerHeightTarget: 0
 	},
+	hatchManipulator: {
+		manipulator: document.getElementById('hatch-manipulation-diagram'),
+		pistonLeft: document.getElementById('hatch-piston-left'),
+		pistonRight: document.getElementById('hatch-piston-right'),
+		extended: true
+	},
 	tuning: {
 		list: document.getElementById('tuning'),
 		button: document.getElementById('tuning-button'),
@@ -49,11 +55,6 @@ var ui = {
 	vufine: {
 		button: document.getElementById('vufine-button')
 	},
-	tankPressure: {
-		gauge: document.getElementById('tank-gauge'),
-		readout: document.getElementById('tank-readout')
-	},
-
     theme: {
         select: document.getElementById('theme-select'),
         link: document.getElementById('theme-link')
@@ -139,21 +140,11 @@ function onValueChanged(key, value, isNew) {
             ui.theme.select.value = value;
             ui.theme.link.href = 'css/' + value + '.css';
             break;
-		case '/robot/pressure':
-			ui.tankPressure.gauge.style.width = value + 'px';
-			if (value < 20) {
-				ui.tankPressure.gauge.style.background = 'red';
-			} else if (value < 60) {
-				ui.tankPressure.gauge.style.background = 'yellow';
-			} else {
-				ui.tankPressure.gauge.style.background = 'green';
-			}
-			ui.tankPressure.readout.innerHTML = Math.round(value) + 'psi';
-			break;
 		case '/components/lift/lift_forward':
 			if (value === (ui.robotDiagram.towerPositionPrevious ? 195 : 125)) {
 				break;
 			}
+			console.log('Lift_Forward: ' + value);
 			ui.robotDiagram.towerPositionPrevious = value;
 			ui.robotDiagram.body.firstElementChild.setAttribute('x', value ? 195 : 125);
 			var tower = ui.robotDiagram.tower;
@@ -168,6 +159,25 @@ function onValueChanged(key, value, isNew) {
 				}
 				updated = updated + (value ? 70 : -70);
 				child.setAttribute(attribute, updated)
+			}
+			break;
+		case '/components/hatch_manipulator/extended':
+			if (ui.hatchManipulator.extended == value) {
+				break;
+			}
+			ui.hatchManipulator.extended = value;
+			console.log('Hatch: ' + value);
+			var pistonNum = 0;
+			for (piston of ui.hatchManipulator.manipulator.children) {
+				if (piston.childElementCount < 2) {
+					piston.textContent = value ? 'CLOSED' : 'OPEN';
+					continue;
+				}
+				for (element of piston.children) {
+					var current = parseInt(element.getAttribute('x'));
+					element.setAttribute('x', current + ((pistonNum % 2 == 0 ? -1 : 1) * (value ? -25 : 25)));
+				}
+				pistonNum++;
 			}
 			break;
 	}
