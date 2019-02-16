@@ -63,7 +63,13 @@ var ui = {
 		wrapper: document.getElementById('replay-auto'),
 		name: document.getElementById('replay-name'),
 		target: document.getElementById('recording-target')
+	},
+	cameras: {
+		camera1: document.getElementById('camera1')
+		camera2: document.getElementById('camera2')
 	}
+
+
 };
 
 // Sets function to be called on NetworkTables connect. Commented out because it's usually not necessary.
@@ -304,6 +310,13 @@ ui.replay.name.onchange = function() {
 }
 ui.replay.target.onchange = function() {
 	NetworkTables.putValue('/components/recorder/title', this.value);
+};
+
+ui.camera.camera1.onclick = function() {
+	camera1.style.background = camera1.style.background;
+}
+ui.camera.camera2.onclick = function() {
+	camera2.style.background = camera2.style.background;
 }
 
 var out = false;
