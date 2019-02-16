@@ -123,11 +123,11 @@ header {
     background-repeat: no-repeat;
 }
 #camera1 {
-    background-image: url("http://roborio-1418-frc.local:1181/stream.mjpg"), url(../images/static.gif);
+    background-image: url("http://10.14.18.2:1181/stream.mjpg"), url(../images/static.gif);
     left: 22vw;
 }
 #camera2 {
-    background-image: url("http://roborio-1418-frc.local:1182/stream.mjpg"), url(../images/static.gif);
+    background-image: url("http://10.14.18.2:1182/stream.mjpg"), url(../images/static.gif);
     left: 52vw;
 }
 #vufine-camera {
