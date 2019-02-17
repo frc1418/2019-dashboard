@@ -71,7 +71,7 @@ body>* {
     height: 20vh;
     width: 25vw;
     top: 0;
-    left: 35vw;
+    left: 0;
     font-size: 20vh;
     line-height: .8;
 }
@@ -106,29 +106,31 @@ body>* {
 
 header {
     width: 20vw;
-    height: 25vh;
-    top: 0;
-    left: 60vw;
+    height: 20vh;
+    top: 20vh;
+    left: 0;
     color: white;
 }
 .camera {
     padding: 0;
     position: fixed;
+    top: 0;
     bottom: 0;
     left: 22vw;
-    width: 30vw;
-    height: 80vh;
+    width: 39vw;
+    height: 100vh;
     background-size: contain;
     overflow: hidden;
     background-repeat: no-repeat;
+    z-index: 1;
 }
 #camera1 {
-    background-image: url("http://10.14.18.2:1181/stream.mjpg"), url(../images/static.gif);
-    left: 30vw;
+    background-image: url("http://10.14.18.2:1181/stream.mjpg");
+    left: 22vw;
 }
 #camera2 {
-    background-image: url("http://10.14.18.2:1182/stream.mjpg"), url(../images/static.gif);
-    left: 60vw;
+    background-image: url("http://10.14.18.2:1182/stream.mjpg");
+    left: 61vw;
 }
 #vufine-camera {
     padding: 0;
@@ -195,10 +197,11 @@ header {
 /* TODO: Other field styles here */
 
 article {
-    top: 0;
+    top: 40vh;
     left: 0;
     height: 100vh;
     width: 22vw;
+    z-index: -1;
 }
 svg * {
     stroke: white;
@@ -230,11 +233,14 @@ text {
 #robot-diagram {
     position: absolute;
     bottom: 30vh;
-    left: 1vw;
+    left: 0;
 }
 #hatch-manipulation-diagram {
-    position: absolute;
-    bottom: 1vh;
+    /*position: absolute;*/
+    top: 0;
+    left: 0;
+    z-index: 200;
+    /*bottom: 1vh;*/
 }
 #robot-tower {
   animation: move-arm 2s infinite alternate-reverse;
