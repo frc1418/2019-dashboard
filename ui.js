@@ -55,10 +55,10 @@ var ui = {
 	vufine: {
 		button: document.getElementById('vufine-button')
 	},
-    theme: {
-        select: document.getElementById('theme-select'),
-        link: document.getElementById('theme-link')
-    },
+    // theme: {
+    //     select: document.getElementById('theme-select'),
+    //     link: document.getElementById('theme-link')
+    // },
 	replay: {
 		wrapper: document.getElementById('replay-auto'),
 		name: document.getElementById('replay-name'),
@@ -136,10 +136,10 @@ function onValueChanged(key, value, isNew) {
 		case '/components/arm/extended':
 			ui.robotDiagram.armExtension.style.transform = 'translateX(' + (value ? 30 : 0)  + 'px)';
 			break;
-		case '/SmartDashboard/theme':
-            ui.theme.select.value = value;
-            ui.theme.link.href = 'css/' + value + '.css';
-            break;
+		// case '/SmartDashboard/theme':
+        //     ui.theme.select.value = value;
+        //     ui.theme.link.href = 'css/' + value + '.css';
+        //     break;
 		case '/components/lift/lift_forward':
 			if (value === (ui.robotDiagram.towerPositionPrevious ? 195 : 125)) {
 				break;
@@ -285,9 +285,9 @@ ui.auto.select.onchange = function() {
 	ui.replay.wrapper.style.display = this.value === 'Replay' ? 'block' : 'none';
 };
 
-ui.theme.select.onchange = function() {
-    NetworkTables.putValue('/SmartDashboard/theme', this.value);
-};
+// ui.theme.select.onchange = function() {
+//     NetworkTables.putValue('/SmartDashboard/theme', this.value);
+// };
 
 ui.auto.position.left.onclick = function() {
 	NetworkTables.putValue('/autonomous/position', this.value);
