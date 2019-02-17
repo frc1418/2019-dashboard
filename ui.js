@@ -65,7 +65,7 @@ var ui = {
 		target: document.getElementById('recording-target')
 	},
 	cameras: {
-		camera1: document.getElementById('camera1')
+		camera1: document.getElementById('camera1'),
 		camera2: document.getElementById('camera2')
 	}
 
