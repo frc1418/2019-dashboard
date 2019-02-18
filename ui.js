@@ -64,7 +64,7 @@ var ui = {
 		name: document.getElementById('replay-name'),
 		target: document.getElementById('recording-target')
 	},
-	cameras: {
+	camera: {
 		camera1: document.getElementById('camera1'),
 		camera2: document.getElementById('camera2')
 	}
