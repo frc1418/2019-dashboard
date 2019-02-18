@@ -18,14 +18,13 @@ body {
     user-select: none;
     color: white;
     overflow: hidden;
-    background: #222;
+    background: black;
 }
 /* Major interface panes, aside, article, header, etc. */
 body>* {
     padding: 10px;
     position: fixed;
     overflow: scroll;
-    background: #222;
 }
 @keyframes blinker {
     0%   {opacity: 1;}
@@ -39,11 +38,22 @@ body>* {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: #333;
+    background-position: center center;
     background-image: url('http://10.14.18.2:1181/?action=stream');
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#crosshair {
+    display: inline-block;
+}
+#crosshair * {
+    stroke: red;
+    fill: none;
+    stroke-width: 3px;
 }
 article {
     top: 0;
