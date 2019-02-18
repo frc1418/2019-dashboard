@@ -93,15 +93,17 @@ app.on('activate', function() {
 	}
 });
 
+var vufineWindow;
+
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 ipcMain.on('vufine', function(event, arg) {
 	//setting dialog
-	var vufineWindow = new BrowserWindow({
+	vufineWindow = new BrowserWindow({
 		width: 1000,
 		height: 600
 	});
-	// Load options page
+	// Load options page.
 	vufineWindow.loadURL(`file://${ __dirname}/vufine.html`);
 
 	vufineWindow.on('closed', function() {
@@ -110,4 +112,9 @@ ipcMain.on('vufine', function(event, arg) {
 		// when you should delete the corresponding element.
 		vufineWindow = null;
 	});
+});
+
+// Refresh vufine window when refresh button is clicked.
+ipcMain.on('refresh', function() {
+    vufineWindow.reload();
 });

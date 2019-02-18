@@ -55,6 +55,9 @@ var ui = {
 	vufine: {
 		button: document.getElementById('vufine-button')
 	},
+	refresh: {
+		button: document.getElementById('refresh')
+	},
     // theme: {
     //     select: document.getElementById('theme-select'),
     //     link: document.getElementById('theme-link')
@@ -272,6 +275,10 @@ ui.auto.button.onclick = function() {
 ui.vufine.button.onclick = function() {
 	ipc.send('vufine');
 }
+ui.refresh.button.onclick = function(){
+	ipc.send('refresh');
+	location.reload();
+}
 
 // Manages get and set buttons at the top of the tuning pane
 ui.tuning.set.onclick = function() {
@@ -311,10 +318,6 @@ ui.replay.name.onchange = function() {
 ui.replay.target.onchange = function() {
 	NetworkTables.putValue('/components/recorder/title', this.value);
 };
-
-document.getElementById('refresh').onclick = function(){
-	location.reload();
-}
 
 ui.camera.camera1.onclick = function() {
 	camera1.style.background = camera1.style.background;
