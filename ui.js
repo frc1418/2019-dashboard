@@ -312,6 +312,10 @@ ui.replay.target.onchange = function() {
 	NetworkTables.putValue('/components/recorder/title', this.value);
 };
 
+document.getElementById('refresh').onclick = function(){
+	location.reload();
+}
+
 ui.camera.camera1.onclick = function() {
 	camera1.style.background = camera1.style.background;
 }

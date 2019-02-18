@@ -28,7 +28,7 @@ function createWindow() {
 	// Create the browser window.
 	mainWindow = new BrowserWindow({
 		width: 3000, // Will scale down to fit screen
-		height: 420,
+		height: 421,
 		// The window is hidden until the python server is ready
 		show: false
 	});

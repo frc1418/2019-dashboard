@@ -125,6 +125,12 @@ header {
     background-repeat: no-repeat;
     z-index: 1;
 }
+#refresh {
+    height: 29px;
+    top: 1vh;
+    margin-top: 1vh;
+    width: 2.5vw;
+}
 #camera1 {
     background-image: url("http://10.14.18.2:1181/stream.mjpg");
     left: 22vw;
