@@ -64,7 +64,7 @@ var ui = {
 		name: document.getElementById('replay-name'),
 		target: document.getElementById('recording-target')
 	},
-	cameras: {
+	camera: {
 		camera1: document.getElementById('camera1'),
 		camera2: document.getElementById('camera2')
 	}
@@ -311,6 +311,10 @@ ui.replay.name.onchange = function() {
 ui.replay.target.onchange = function() {
 	NetworkTables.putValue('/components/recorder/title', this.value);
 };
+
+document.getElementById('refresh').onclick = function(){
+	location.reload();
+}
 
 ui.camera.camera1.onclick = function() {
 	camera1.style.background = camera1.style.background;
