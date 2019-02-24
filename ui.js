@@ -219,12 +219,14 @@ function onValueChanged(key, value, isNew) {
 		}
 	}
 }
-// Open tuning section when button is clicked
+
 ui.tuning.button.onclick = function() {
+    ui.auto.panel.style.display = 'none';
 	ui.tuning.list.style.display = (ui.tuning.list.style.display === 'none') ? 'block' : 'none';
 };
 
 ui.auto.button.onclick = function() {
+    ui.tuning.list.style.display = 'none';
 	ui.auto.panel.style.display = (ui.auto.panel.style.display === 'none') ? 'block' : 'none';
 };
 
