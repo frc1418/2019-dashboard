@@ -5,7 +5,9 @@
 
 NOTE: This repository was originally cloned from 1418's [2017 dashboard](https://github.com/frc1418/2017-dashboard). As such, it continues to use `pynetworktables2js` rather than FRCDashboard's new Node-based server.
 
-![Screenshot](images/screenshot.png)
+![Screenshot](images/screenshot1.png)
+![Screenshot](images/screenshot2.png)
+![Screenshot](images/screenshot3.png)
 
 ## Setup
 ### Dependencies
