@@ -228,7 +228,7 @@ text {
 }
 #gyro {
 }
-#gyro-robot {
+#gyro-arm {
     -webkit-transform-origin: bottom;
     -ms-transform-origin: bottom;
     transform-origin: bottom;
