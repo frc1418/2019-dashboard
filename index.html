@@ -116,11 +116,9 @@
         <text id="gyro-number" x="73" y="100" font-size=12>0º</text>
     </svg>
     <svg id="robot-diagram" width="332" height="450">
-        <!-- Back -->
-        <rect x=195 y=180 width=15 height=200 />
-
-            <g id="robot-tower">
-
+        <g id="robot-tower">
+            <rect x=195 y=180 width=15 height=200 />
+            <g id="robot-manipulator">
                 <!-- Ball -->
                 <circle class="ball" cx="250" cy="185" r="25" />
 
@@ -128,7 +126,7 @@
                 <rect x="195" y="180" width="60" height="18" />
                 <rect x="245" y="190" width="10" height="18" />
             </g>
-
+        </g>
         <!-- Sponsors -->
         <rect x=40 y=280 width=75 height=100 />
         <text x=55 y=300 font-size=8>{vektre}</text>
