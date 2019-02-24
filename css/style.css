@@ -13,9 +13,6 @@
 }
 body {
     font: 16px sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     color: white;
     overflow: hidden;
@@ -47,7 +44,6 @@ input[type="text"], input[type="number"] {
     cursor: text;
 }
 input[type="checkbox"] {
-    -webkit-filter: saturate(0);
     filter: saturate(0);
 }
 table {
@@ -199,8 +195,6 @@ svg * {
     stroke: white;
     fill: #333;
     stroke-width: 2;
-    -webkit-transform-origin: center;
-    -ms-transform-origin: center;
     transform-origin: center;
 }
 .svgsolid {
@@ -231,21 +225,16 @@ text {
     transition: 0.2s;
 }
 #hatch-manipulation-diagram {
-    /*position: absolute;*/
     top: 0;
     left: 0;
     z-index: 200;
-    /*bottom: 1vh;*/
 }
 #robot-manipulator {
-  animation: move-arm 2s infinite alternate-reverse;
+    animation: move-arm 2s infinite alternate-reverse;
 }
 @keyframes move-arm {
     from { transform: translateY(165px); }
     to   { transform: translateY(0px);  }
-}
-#robot-crosspiece {
-
 }
 .ball {
     fill: #FF8300;
