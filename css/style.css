@@ -68,10 +68,6 @@ body>* {
 #timer {
     font-family: 'DS-Digital', monospace;
     display: block;
-    height: 20vh;
-    width: 25vw;
-    top: 0;
-    left: 0;
     font-size: 20vh;
     line-height: .8;
 }
@@ -104,20 +100,18 @@ body>* {
     100% {opacity: 0;}
 }
 
-header {
-    width: 20vw;
-    height: 20vh;
-    top: 20vh;
-    left: 0;
-    color: white;
+#refresh {
+    height: 29px;
+    top: 1vh;
+    margin-top: 1vh;
+    width: 2.5vw;
 }
 .camera {
     padding: 0;
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 22vw;
-    width: 39vw;
+    width: 42vw;
     height: 100vh;
     background-size: contain;
     overflow: hidden;
@@ -125,19 +119,13 @@ header {
     background-repeat: no-repeat;
     z-index: 1;
 }
-#refresh {
-    height: 29px;
-    top: 1vh;
-    margin-top: 1vh;
-    width: 2.5vw;
-}
 #camera1 {
     background-image: url("http://10.14.18.2:1181/stream.mjpg");
-    left: 22vw;
+    right: 42vw;
 }
 #camera2 {
     background-image: url("http://10.14.18.2:1182/stream.mjpg");
-    left: 61vw;
+    right: 0;
 }
 #vufine-camera {
     padding: 0;
@@ -201,13 +189,12 @@ header {
     fill: none;
     stroke-width: 3px;
 }
-/* TODO: Other field styles here */
 
 article {
-    top: 40vh;
+    top: 0;
     left: 0;
     height: 100vh;
-    width: 22vw;
+    width: 16vw;
     z-index: -1;
 }
 svg * {
@@ -290,16 +277,6 @@ text {
 .ball {
     display: block;
     margin-top: 10px;
-}
-aside {
-    right: 0;
-    top: 0;
-    padding-left: 20px;
-    width: 15vw;
-    height: 100vh;
-}
-aside>* {
-    margin-bottom: 20px;
 }
 #replay-auto {
     position: relative;
