@@ -58,6 +58,9 @@ var ui = {
 	refresh: {
 		button: document.getElementById('refresh')
 	},
+    vision: {
+        readout: document.getElementById('vision-readout')
+    },
     // theme: {
     //     select: document.getElementById('theme-select'),
     //     link: document.getElementById('theme-link')
@@ -189,6 +192,9 @@ function onValueChanged(key, value, isNew) {
 				pistonNum++;
 			}
 			break;
+        case '/vision/yaw':
+            ui.vision.readout.textContent = value;
+            break;
 	}
 
 	// The following code manages tuning section of the interface.
