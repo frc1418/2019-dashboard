@@ -46,7 +46,15 @@ input[type="text"], input[type="number"] {
 input[type="checkbox"] {
     filter: saturate(0);
 }
+/* Specific buttons and inputs */
+#refresh {
+    height: 29px;
+    top: 1vh;
+    margin-top: 1vh;
+    width: 2.5vw;
+}
 
+/* Timer */
 @font-face {
     font-family: 'DS-Digital';
     src: local('DS-Digital'), url(digital.ttf) format('truetype');
@@ -59,12 +67,8 @@ input[type="checkbox"] {
     line-height: .8;
 }
 
-#refresh {
-    height: 29px;
-    top: 1vh;
-    margin-top: 1vh;
-    width: 2.5vw;
-}
+
+/* Cameras */
 .camera {
     padding: 0;
     position: fixed;
@@ -85,19 +89,6 @@ input[type="checkbox"] {
 #camera2 {
     background-image: url("http://10.14.18.2:1182/stream.mjpg");
     right: 0;
-}
-#vufine-camera {
-    padding: 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #333;
-    background-image: url('http://10.14.18.2:1182/?action=stream');
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 #camera-buttons > rect {
     transition: fill .2s;
