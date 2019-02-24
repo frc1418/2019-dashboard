@@ -143,7 +143,6 @@ function onValueChanged(key, value, isNew) {
 			var pistonNum = 0;
 			for (piston of ui.hatchManipulator.manipulator.children) {
 				if (piston.childElementCount < 2) {
-					piston.textContent = value ? 'CLOSED' : 'OPEN';
 					continue;
 				}
 				for (element of piston.children) {
