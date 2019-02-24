@@ -6,19 +6,14 @@ var ui = {
 	robotState: document.getElementById('robot-state'),
 	gyro: {
 		container: document.getElementById('gyro'),
-		val: 0,
-		offset: 0,
-		visualVal: 0,
 		arm: document.getElementById('gyro-arm'),
 		number: document.getElementById('gyro-number')
 	},
 	robotDiagram: {
 		body: document.getElementById('robot-diagram'),
 		arm: document.getElementById('robot-arm'),
-		tower: document.getElementById('robot-tower'),
-		towerPositionPrevious: true,
-		towerHeightUpdated: false,
-		towerHeightTarget: 0
+		manipulator: document.getElementById('robot-manipulator'),
+        tower: document.getElementById('robot-tower'),
 	},
 	hatchManipulator: {
 		manipulator: document.getElementById('hatch-manipulation-diagram'),
@@ -105,7 +100,8 @@ function onValueChanged(key, value, isNew) {
 			switch (value) {
 				case 'disabled':
 					ui.timer.innerHTML = 'DISBL';
-					ui.robotDiagram.tower.style.animation = 'move-arm 2s infinite alternate-reverse';
+                    // TODO: This is pretty messy.
+					ui.robotDiagram.manipulator.style.animation = 'move-arm 2s infinite alternate-reverse';
 					break;
 			}
 			break;
@@ -149,25 +145,7 @@ function onValueChanged(key, value, isNew) {
         //     ui.theme.link.href = 'css/' + value + '.css';
         //     break;
 		case '/components/lift/lift_forward':
-			if (value === (ui.robotDiagram.towerPositionPrevious ? 195 : 125)) {
-				break;
-			}
-			console.log('Lift_Forward: ' + value);
-			ui.robotDiagram.towerPositionPrevious = value;
-			ui.robotDiagram.body.firstElementChild.setAttribute('x', value ? 195 : 125);
-			var tower = ui.robotDiagram.tower;
-			ui.robotDiagram.towerUpdated = true;
-
-			for (child of tower.children) {
-				var attribute = 'x';
-				var updated = parseInt(child.getAttribute('x'));
-				if (isNaN(updated)) {
-					updated = parseInt(child.getAttribute('cx'));
-					attribute = 'cx';
-				}
-				updated = updated + (value ? 70 : -70);
-				child.setAttribute(attribute, updated)
-			}
+            ui.robotDiagram.tower.style.transform = 'translateX(' + value ? 70 : 0 + 'px)';
 			break;
 		case '/components/hatch_manipulator/extended':
 			if (ui.hatchManipulator.extended == value) {
@@ -253,17 +231,6 @@ function onValueChanged(key, value, isNew) {
 		}
 	}
 }
-
-// Reset gyro value to 0 on click
-ui.gyro.container.onclick = function() {
-	// Store previous gyro val, will now be subtracted from val for callibration
-
-	ui.gyro.offset = ui.gyro.val;
-	// Trigger the gyro to recalculate value.
-	// Do as I say, not as I do.
-	onValueChanged('SmartDashboard/drive/drive/navx_yaw', ui.gyro.val);
-};
-
 // Open tuning section when button is clicked
 ui.tuning.button.onclick = function() {
 	ui.tuning.list.style.display = (ui.tuning.list.style.display === 'none') ? 'block' : 'none';

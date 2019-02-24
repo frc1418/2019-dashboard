@@ -114,7 +114,7 @@ body>* {
     height: 37.5vw;
     background-size: contain;
     overflow: hidden;
-    background-color: #444;
+    background-color: #333;
     background-repeat: no-repeat;
     z-index: 0;
 }
@@ -197,7 +197,7 @@ article {
 }
 svg * {
     stroke: white;
-    fill: #222;
+    fill: #333;
     stroke-width: 2;
     -webkit-transform-origin: center;
     -ms-transform-origin: center;
@@ -234,7 +234,7 @@ text {
     z-index: 200;
     /*bottom: 1vh;*/
 }
-#robot-tower {
+#robot-manipulator {
   animation: move-arm 2s infinite alternate-reverse;
 }
 @keyframes move-arm {
