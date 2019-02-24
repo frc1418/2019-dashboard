@@ -91,10 +91,14 @@ function onValueChanged(key, value, isNew) {
 	// This switch statement chooses which UI element to update when a NetworkTables variable changes.
 	switch (key) {
 		case '/robot/mode':
+            document.body.className = ((value === 'disabled') ? 'disabled' : 'enabled');
 			switch (value) {
 				case 'disabled':
 					ui.timer.innerHTML = 'DISABLED';
 					break;
+                case 'teleop':
+                case 'auto':
+                    break;
 			}
 			break;
 		case '/robot/time':
