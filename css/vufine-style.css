@@ -87,7 +87,7 @@ text {
     position: absolute;
     background-color: transparent;
 }
-#gyro-robot {
+#gyro-arm {
     -webkit-transform-origin: bottom;
     -ms-transform-origin: bottom;
     transform-origin: bottom;
@@ -95,6 +95,7 @@ text {
 #gyro-number {
     font-size: 25px;
     text-anchor: middle;
+    display: none;
 }
 .cube {
     display: block;
