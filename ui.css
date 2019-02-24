@@ -227,3 +227,9 @@ text {
     font-size: 28px;
     letter-spacing: -1px;
 }
+
+/* Hide everything but cameras when enabled */
+body.enabled article,
+body.enabled > svg {
+    visibility: hidden;
+}
