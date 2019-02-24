@@ -8,9 +8,6 @@
 </head>
 
 <body>
-
-    <!-- You'll need to mess around with the CSS of #camera (found in css/style.css) to get it to work.
-        More explanation in that CSS rule. -->
     <div id="camera">
         <svg id="crosshair" width="40" height="40">
             <circle cx="20" cy="20" r="18" />
@@ -18,17 +15,12 @@
             <line x1="20" y1="2" x2="20" y2="38" stroke="red" />
         </svg>
     </div>
-    <!-- The main body of the dashboard -->
-        <!-- Gyroscope -->
     <svg id="gyro" width="1000" height="600">
         <circle cx="890" cy="80" r="75" />
         <circle cx="890" cy="80" r="50" />
         <rect id="gyro-arm" x="887" y="5" width="5" height="75" stroke-width="3" fill="white" />
         <text id="gyro-number" x="894" y="110">0º</text>
     </svg>
-
-    <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
-
     <script src="/networktables/networktables.js"></script>
     <script src="vufine.js"></script>
 </body>
