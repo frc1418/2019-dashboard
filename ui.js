@@ -113,7 +113,7 @@ function onValueChanged(key, value, isNew) {
 			ui.timer.innerHTML = value <= 0 ? '0:00' : Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
 			ui.timer.className = value == 0 ? '' : (value <= 10 ? 'blink' : (value <= 30 ? 'low' : (value <= 90 ? 'med' : (value <= 135 ? 'high' : 'auto'))));
 			break;
-		case '/SmartDashboard/drive/drive/navx_yaw': // Gyro rotation
+		case '/robot/yaw': // Gyro rotation
 			ui.gyro.val = value;
 			ui.gyro.visualVal = Math.floor(ui.gyro.val - ui.gyro.offset);
 			if (ui.gyro.visualVal < 0) ui.gyro.visualVal += 360; // Corrects for negative values
