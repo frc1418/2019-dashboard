@@ -114,12 +114,8 @@ function onValueChanged(key, value, isNew) {
 			ui.timer.className = value == 0 ? '' : (value <= 10 ? 'blink' : (value <= 30 ? 'low' : (value <= 90 ? 'med' : (value <= 135 ? 'high' : 'auto'))));
 			break;
 		case '/robot/yaw': // Gyro rotation
-			ui.gyro.val = value;
-			ui.gyro.visualVal = Math.floor(ui.gyro.val - ui.gyro.offset);
-			if (ui.gyro.visualVal < 0) ui.gyro.visualVal += 360; // Corrects for negative values
-
-			ui.gyro.arm.style.transform = ('rotate(' + ui.gyro.visualVal + 'deg)');
-			ui.gyro.number.innerHTML = ui.gyro.visualVal + 'º';
+			ui.gyro.arm.style.transform = ('rotate(' + value + 'deg)');
+			ui.gyro.number.textContent = parseInt(value) + 'º';
 			break;
 		case '/SmartDashboard/Autonomous Mode/options': // Load list of prewritten autonomous modes
 			// Clear previous list
