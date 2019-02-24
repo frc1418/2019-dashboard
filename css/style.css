@@ -63,7 +63,6 @@ body>* {
     padding: 10px;
     position: fixed;
     overflow: scroll;
-    background: #222;
 }
 #timer {
     font-family: 'DS-Digital', monospace;
@@ -111,17 +110,17 @@ body>* {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 42vw;
-    height: 100vh;
+    width: 50vw;
+    height: 37.5vw;
     background-size: contain;
     overflow: hidden;
     background-color: #444;
     background-repeat: no-repeat;
-    z-index: 1;
+    z-index: 0;
 }
 #camera1 {
     background-image: url("http://10.14.18.2:1181/stream.mjpg");
-    right: 42vw;
+    right: 50vw;
 }
 #camera2 {
     background-image: url("http://10.14.18.2:1182/stream.mjpg");
@@ -194,8 +193,7 @@ article {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 16vw;
-    z-index: -1;
+    z-index: 1;
 }
 svg * {
     stroke: white;
@@ -214,10 +212,10 @@ text {
     fill: white;
 }
 #gyro {
+    top: 0;
+    right: 0;
 }
 #gyro-arm {
-    -webkit-transform-origin: bottom;
-    -ms-transform-origin: bottom;
     transform-origin: bottom;
 }
 #gyro-number {
@@ -226,8 +224,8 @@ text {
 }
 #robot-diagram {
     position: absolute;
-    bottom: 30vh;
-    left: 0;
+    bottom: 0;
+    right: 0;
 }
 #hatch-manipulation-diagram {
     /*position: absolute;*/
