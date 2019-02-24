@@ -67,7 +67,10 @@ input[type="checkbox"] {
     font-size: 20vh;
     line-height: .8;
 }
-
+/* Colors for timer in different stages of expiry */
+.high { color: #42C752; }
+.med  { color: #FFEB3B; }
+.low  { color: #D32F2F; }
 
 /* Cameras */
 .camera {
