@@ -1,16 +1,10 @@
-@font-face {
-    font-family: 'DS-Digital';
-    src: local('DS-Digital'), url(digital.ttf) format('truetype');
-    unicode-range: U+0030—003A;
-}
+/* Global things */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-::-webkit-scrollbar {
-    display: none;
-}
+::-webkit-scrollbar { display: none; }
 body {
     font: 16px sans-serif;
     user-select: none;
@@ -18,6 +12,12 @@ body {
     overflow: hidden;
     background: #222;
 }
+/* Top-level interface panels */
+body > * {
+    padding: 10px;
+    position: fixed;
+}
+/* Basic interactive components */
 button, input[type="text"], input[type="number"], .select-container, select {
     color: white;
     background: #444;
@@ -46,53 +46,17 @@ input[type="text"], input[type="number"] {
 input[type="checkbox"] {
     filter: saturate(0);
 }
-table {
-    border-collapse: collapse;
-}
-td {
-    padding: 3px;
-}
 
-/* Major interface panes, aside, article, header, etc. */
-
-body>* {
-    padding: 10px;
-    position: fixed;
-    overflow: scroll;
+@font-face {
+    font-family: 'DS-Digital';
+    src: local('DS-Digital'), url(digital.ttf) format('truetype');
+    unicode-range: U+0030—003A;
 }
 #timer {
     font-family: 'DS-Digital', monospace;
     display: block;
     font-size: 20vh;
     line-height: .8;
-}
-.high {
-    color: #42C752;
-}
-.med {
-    color: #FFEB3B;
-}
-.low {
-    color: #D32F2F;
-}
-.blink {
-    color: #D32F2F;
-    animation: 0.75s linear infinite blinker;
-}
-.auto {
-    color: #0E68FA;
-}
-.auto::after {
-    content: 'AUTO';
-    font-family: 'Courier';
-    font-size: 25pt;
-    position: absolute;
-    vertical-align: top;
-    padding: 5px 15px 15px;
-}
-@keyframes blinker {
-    0%   {opacity: 1;}
-    100% {opacity: 0;}
 }
 
 #refresh {
