@@ -227,6 +227,9 @@ text {
     bottom: 0;
     right: 0;
 }
+#robot-tower {
+    transition: 0.2s;
+}
 #hatch-manipulation-diagram {
     /*position: absolute;*/
     top: 0;

@@ -84,7 +84,7 @@ function onRobotConnection(connected) {
 function onValueChanged(key, value, isNew) {
 	console.log(key, value);
 	// Sometimes, NetworkTables will pass booleans as strings. This corrects for that.
-	// We could also use JSON.parse() on the value if it matches either value. This would be less efficient.
+	// We could also use JSON.parse() on the value if it matches either value.
 	if (value == 'true') value = true;
 	else if (value == 'false') value = false;
 
@@ -131,11 +131,8 @@ function onValueChanged(key, value, isNew) {
 		case '/components/recorder/title':
 			ui.replay.target.value = value;
 			break;
-		case '/components/arm/extended':
-			ui.robotDiagram.armExtension.style.transform = 'translateX(' + (value ? 30 : 0)  + 'px)';
-			break;
 		case '/components/lift/lift_forward':
-            ui.robotDiagram.tower.style.transform = 'translateX(' + value ? 70 : 0 + 'px)';
+            ui.robotDiagram.tower.style.transform = 'translateX(' + (value ? 0 : -70) + 'px)';
 			break;
 		case '/components/hatch_manipulator/extended':
 			if (ui.hatchManipulator.extended == value) {
