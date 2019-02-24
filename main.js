@@ -27,41 +27,41 @@ function createWindow() {
         server = require('child_process').spawn('python3', ['-m', 'pynetworktables2js', '--robot', '10.14.18.2']);
     }
 
-	// Create the browser window.
-	mainWindow = new BrowserWindow({
-		width: 1280,
-		height: 490,
-		// The window is hidden until the python server is ready
-		show: false,
+    // Create the browser window.
+    mainWindow = new BrowserWindow({
+        width: 1280,
+        height: 490,
+        // The window is hidden until the python server is ready
+        show: false,
         frame: false //TODO: This gives a warning
-	});
+    });
 
-	// Move window to top (left) of screen.
-	mainWindow.setPosition(0, 0);
+    // Move window to top (left) of screen.
+    mainWindow.setPosition(0, 0);
 
-	// Load window.
-	mainWindow.loadURL(HOST);
+    // Load window.
+    mainWindow.loadURL(HOST);
 
-	// Once the python server is ready, load window contents.
+    // Once the python server is ready, load window contents.
     // TODO: fix this abnomination
-	mainWindow.once('ready-to-show', function() {
-		mainWindow.loadURL(HOST);
-		mainWindow.once('ready-to-show', function() {
-			// Once it has reloaded, show the window
-			mainWindow.show();
-		});
-	});
+    mainWindow.once('ready-to-show', function() {
+        mainWindow.loadURL(HOST);
+        mainWindow.once('ready-to-show', function() {
+            // Once it has reloaded, show the window
+            mainWindow.show();
+        });
+    });
 
     // Remove menu
     mainWindow.setMenu(null);
 
-	// Emitted when the window is closed.
-	mainWindow.on('closed', function() {
-		// Dereference the window object, usually you would store windows
-		// in an array if your app supports multi windows, this is the time
-		// when you should delete the corresponding element.
-		mainWindow = null;
-	});
+    // Emitted when the window is closed.
+    mainWindow.on('closed', function() {
+        // Dereference the window object, usually you would store windows
+        // in an array if your app supports multi windows, this is the time
+        // when you should delete the corresponding element.
+        mainWindow = null;
+    });
 }
 
 // This method will be called when Electron has finished
@@ -70,8 +70,8 @@ app.on('ready', createWindow);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
-	// On OS X it is common for applications and their menu bar
-	// to stay active until the user quits explicitly with Cmd + Q.
+    // On OS X it is common for applications and their menu bar
+    // to stay active until the user quits explicitly with Cmd + Q.
     // Not like we're creating a consumer application though.
     // Let's just kill it anyway.
 
@@ -89,11 +89,11 @@ app.on('quit', function() {
 });
 
 app.on('activate', function() {
-	// On OS X it's common to re-create a window in the app when the
-	// dock icon is clicked and there are no other windows open.
-	if (mainWindow === null) {
-		createWindow();
-	}
+    // On OS X it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (mainWindow === null) {
+        createWindow();
+    }
 });
 
 var vufineWindow;
@@ -101,20 +101,20 @@ var vufineWindow;
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 ipcMain.on('vufine', function(event, arg) {
-	//setting dialog
-	vufineWindow = new BrowserWindow({
-		width: 1000,
-		height: 600
-	});
-	// Load options page.
-	vufineWindow.loadURL(`${HOST}/vufine.html`);
+    //setting dialog
+    vufineWindow = new BrowserWindow({
+        width: 1000,
+        height: 600
+    });
+    // Load options page.
+    vufineWindow.loadURL(`${HOST}/vufine.html`);
 
-	vufineWindow.on('closed', function() {
-		// Dereference the window object, usually you would store windows
-		// in an array if your app supports multi windows, this is the time
-		// when you should delete the corresponding element.
-		vufineWindow = null;
-	});
+    vufineWindow.on('closed', function() {
+        // Dereference the window object, usually you would store windows
+        // in an array if your app supports multi windows, this is the time
+        // when you should delete the corresponding element.
+        vufineWindow = null;
+    });
 });
 
 // Refresh vufine window when refresh button is clicked.
