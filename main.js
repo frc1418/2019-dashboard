@@ -15,6 +15,8 @@ let mainWindow;
 // Define global reference to the python server (which we'll start next).
 let server;
 
+const HOST = 'http://localhost:8888';
+
 function createWindow() {
     // Start python server.
     if (process.platform === 'win32') {
@@ -38,12 +40,12 @@ function createWindow() {
 	mainWindow.setPosition(0, 0);
 
 	// Load window.
-	mainWindow.loadURL('http://localhost:8888');
+	mainWindow.loadURL(HOST);
 
 	// Once the python server is ready, load window contents.
     // TODO: fix this abnomination
 	mainWindow.once('ready-to-show', function() {
-		mainWindow.loadURL('http://localhost:8888');
+		mainWindow.loadURL(HOST);
 		mainWindow.once('ready-to-show', function() {
 			// Once it has reloaded, show the window
 			mainWindow.show();
@@ -105,7 +107,7 @@ ipcMain.on('vufine', function(event, arg) {
 		height: 600
 	});
 	// Load options page.
-	vufineWindow.loadURL(`file://${ __dirname}/vufine.html`);
+	vufineWindow.loadURL(`${HOST}/vufine.html`);
 
 	vufineWindow.on('closed', function() {
 		// Dereference the window object, usually you would store windows
