@@ -63,7 +63,6 @@ article {
 }
 svg * {
     stroke: white;
-    fill: #222;
     stroke-width: 2;
     -webkit-transform-origin: center;
     -ms-transform-origin: center;
@@ -76,7 +75,6 @@ svg * {
     stroke: #222;
     stroke-width: 0;
 }
-.ballicons {}
 text {
     font-size: 16px;
     letter-spacing: 2px;
