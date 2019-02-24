@@ -135,6 +135,7 @@ function onValueChanged(key, value, isNew) {
             ui.robotDiagram.tower.style.transform = 'translateX(' + (value ? 0 : -70) + 'px)';
 			break;
 		case '/components/hatch_manipulator/extended':
+            // TODO: This process is unnecessarily convoluted; you should use CSS classes instead with transform: translateX properties and simply add and remove those classes to change the positioning.
 			if (ui.hatchManipulator.extended == value) {
 				break;
 			}
@@ -143,6 +144,7 @@ function onValueChanged(key, value, isNew) {
 			var pistonNum = 0;
 			for (piston of ui.hatchManipulator.manipulator.children) {
 				if (piston.childElementCount < 2) {
+					piston.textContent = value ? 'CLOSED' : 'OPEN';
 					continue;
 				}
 				for (element of piston.children) {

@@ -16,6 +16,7 @@ body {
 body > * {
     padding: 10px;
     position: fixed;
+    overflow: scroll;
 }
 /* Basic interactive components */
 button, input[type="text"], input[type="number"], .select-container, select {
@@ -100,10 +101,12 @@ input[type="checkbox"] {
 
 /* Tuning */
 #tuning {
-    width: 77vw;
-    height: 80vh;
+    background: inherit;
+    width: 50vw;
+    height: 100vh;
     bottom: 0;
-    left: 22vw;
+    right: 0;
+    z-index: 2;
 }
 #tuning div {
     margin: 20px 0;
@@ -118,11 +121,12 @@ input[type="checkbox"] {
     color: red;
 }
 #auto {
-    width: 22vw;
+    width: 50vw;
     height: 100vh;
     bottom: 0;
-    left: 0;
-    z-index: 100;
+    right: 0;
+    z-index: 1;
+    background: inherit;
 }
 #field, #field svg {
     width: calc(54 * 8px);
