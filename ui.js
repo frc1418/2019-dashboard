@@ -5,7 +5,6 @@ var ui = {
 	timer: document.getElementById('timer'),
 	robotState: document.getElementById('robot-state'),
 	gyro: {
-		container: document.getElementById('gyro'),
 		arm: document.getElementById('gyro-arm'),
 		number: document.getElementById('gyro-number')
 	},
@@ -19,7 +18,6 @@ var ui = {
 		manipulator: document.getElementById('hatch-manipulation-diagram'),
 		pistonLeft: document.getElementById('hatch-piston-left'),
 		pistonRight: document.getElementById('hatch-piston-right'),
-		extended: true
 	},
 	tuning: {
 		list: document.getElementById('tuning'),
@@ -56,10 +54,6 @@ var ui = {
     vision: {
         readout: document.getElementById('vision-readout')
     },
-    // theme: {
-    //     select: document.getElementById('theme-select'),
-    //     link: document.getElementById('theme-link')
-    // },
 	replay: {
 		wrapper: document.getElementById('replay-auto'),
 		name: document.getElementById('replay-name'),
@@ -140,10 +134,6 @@ function onValueChanged(key, value, isNew) {
 		case '/components/arm/extended':
 			ui.robotDiagram.armExtension.style.transform = 'translateX(' + (value ? 30 : 0)  + 'px)';
 			break;
-		// case '/SmartDashboard/theme':
-        //     ui.theme.select.value = value;
-        //     ui.theme.link.href = 'css/' + value + '.css';
-        //     break;
 		case '/components/lift/lift_forward':
             ui.robotDiagram.tower.style.transform = 'translateX(' + value ? 70 : 0 + 'px)';
 			break;
