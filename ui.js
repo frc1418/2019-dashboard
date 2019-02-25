@@ -76,7 +76,7 @@ NetworkTables.addGlobalListener(onValueChanged, true);
 
 
 function onRobotConnection(connected) {
-    var state = connected ? 'Connected!' : 'Disconnected.';
+    var state = connected ? '' : 'DISCONNECTED';
     console.log(state);
     ui.robotState.innerHTML = state;
 }

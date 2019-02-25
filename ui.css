@@ -67,6 +67,23 @@ input[type="checkbox"] {
     font-size: 20vh;
     line-height: .8;
 }
+
+/* Connected/Disconnected readout superimposed over dashboard */
+#robot-state {
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    font-size: 150px;
+    padding-top: 150px;
+    text-align: center;
+    z-index: 3;
+    background: #333;
+    color: #222;
+}
+#robot-state:empty {
+    display: none;
+}
+
 /* Colors for timer in different stages of expiry */
 .high { color: #42C752; }
 .med  { color: #FFEB3B; }
