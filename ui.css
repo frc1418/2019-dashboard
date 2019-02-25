@@ -113,6 +113,9 @@ input[type="checkbox"] {
     background-image: url("http://10.14.18.2:1182/stream.mjpg");
     right: 0;
 }
+#crosshair {
+    margin-top: 220px;
+}
 #crosshair * {
     stroke: red;
     fill: none;
