@@ -107,7 +107,10 @@ ipcMain.on('vufine', function(event, arg) {
         height: 600
     });
     // Load options page.
+    vufineWindow.setMenu(null);
     vufineWindow.loadURL(`${HOST}/vufine.html`);
+    vufineWindow.setPosition(1281, 0);
+    vufineWindow.setFullScreen(true);
 
     vufineWindow.on('closed', function() {
         // Dereference the window object, usually you would store windows
