@@ -34,7 +34,7 @@ body>* {
     height: 100vh;
     overflow: hidden;
     background-position: center center;
-    background-image: url('http://10.14.18.2:1181/?action=stream');
+    background-image: url('http://10.14.18.2:1182/?action=stream');
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1;
