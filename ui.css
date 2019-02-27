@@ -210,7 +210,17 @@ text {
     stroke: none;
     fill: white;
 }
-
+#eye * {
+    z-index: 100;
+    display: inline-block;
+    margin-top: 20px;
+}
+#eye.on * {
+    stroke: green;
+}
+#eye.off * {
+    stroke: grey;
+}
 /* Gyro */
 #gyro {
     top: 0;
