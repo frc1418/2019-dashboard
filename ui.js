@@ -52,7 +52,8 @@ var ui = {
         button: document.getElementById('refresh')
     },
     vision: {
-        readout: document.getElementById('vision-readout')
+        readout: document.getElementById('vision-readout'),
+        eye: document.getElementById('eye')
     },
     replay: {
         wrapper: document.getElementById('replay-auto'),
@@ -158,6 +159,9 @@ function onValueChanged(key, value, isNew) {
             break;
         case '/vision/yaw':
             ui.vision.readout.textContent = value;
+            break;
+        case '/vision/target_present':
+            ui.vision.eye.className.baseVal = (value ? 'on' : 'off');
             break;
     }
 
