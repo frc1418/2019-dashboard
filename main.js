@@ -29,9 +29,9 @@ function createWindow() {
 
     // Create the browser window.
     const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize;
-	mainWindow = new BrowserWindow({
-		width: width,
-		height: height - 235,
+    mainWindow = new BrowserWindow({
+        width: width,
+        height: height - 235,
         // The window is hidden until the python server is ready
         show: false,
         frame: false //TODO: This gives a warning
